@@ -12,9 +12,10 @@ public class CreaningRotaBack2Application {
 	public static void main(String[] args) {
 		SpringApplication.run(CreaningRotaBack2Application.class, args);
 	}
-	
+
 	/**
 	 * Cross Origin Resource Sharing Settings.
+	 *
 	 * @return
 	 */
 	@Bean

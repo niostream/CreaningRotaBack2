@@ -1,12 +1,12 @@
-package com.example.CreaningRota2.dto.login;
+package com.example.CreaningRota2.dto;
 
 public class LoginDTO {
-	
+
 	/** ユーザーID */
 	private String userId;
 	/** パスワード */
 	private String password;
-	
+
 	public String getUserId() {
 		return userId;
 	}

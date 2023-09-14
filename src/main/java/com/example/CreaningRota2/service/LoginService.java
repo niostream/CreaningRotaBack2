@@ -9,7 +9,6 @@ import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.stereotype.Service;
 
 import com.example.CreaningRota2.domain.User;
-import com.example.CreaningRota2.dto.login.LoginDTO;
 import com.example.CreaningRota2.rowmapper.UserRowMapper;
 import com.example.CreaningRota2.sql.UserSql;
 
@@ -25,10 +24,10 @@ public class LoginService {
 	@Autowired
 	UserRowMapper userRowMapper;
 	
-	public Optional<User> getUserByUserIdPassword(LoginDTO loginDTO) {
+	public Optional<User> getUserByUserIdPassword(User user) {
 		Map<String, Object> parameters = new HashMap<String, Object>();
-		parameters.put("userId", loginDTO.getUserId());
-		parameters.put("password", loginDTO.getPassword());
+		parameters.put("userId", user.getUserId());
+		parameters.put("password", user.getPassword());
 		return Optional.ofNullable(template.query(userSql.getUserByUserId(), parameters,
 				userRowMapper.getUserResultSetExtractor()));	
 	}
